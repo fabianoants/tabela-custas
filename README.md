@@ -6,7 +6,7 @@ Atualizações
 * 11/04 Comparação de valores;
 
 Em desenvolvimento
-
+* Otimizar codigo.
 
 Futuramente
 * Contador de acertos;
