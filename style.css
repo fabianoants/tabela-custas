@@ -101,12 +101,10 @@ body {
     color: var(--cor-principal);
 }
 
-/*
 .conteudo__lista__valores__botao:active {
     background-color: var(--cor-principal);
     color: var(--cor-fundo-escuro);
 }
-*/
 
 .conteudo__lista__valores__botao-certo {
     background-color: var(--cor-certo);
