@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Handlee&display=swap');
+
+:root {
+
+    --cor-fundo-claro: #F8F0E5;
+    --cor-fundo-escuro: #DAC0A3;
+    --cor-efeito: #EADBC8;
+    --cor-destaque: #101720;
+    --cor-principal: #00325D;
+    --cor-texto: #5A6D92;
+    --cor-certo: #4ce0b3;
+    --cor-errado: #ed6a5e;
+
+    --fonte: "DM Serif Display", serif;
+    --numero: "Handlee";
+}
+
+body {
+    color: var(--cor-principal);
+    background-color: var(--cor-fundo-claro);
+    box-sizing: border-box;
+    height: 100vh;
+    font-family: var(--fonte);
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.cabecalho {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.conteudo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.conteudo__box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.conteudo__box__titulo {
+    font-size: 72px;
+}
+
+.conteudo__box__subtitulo {
+    margin-top: 0.3em;
+    font-size: 28px;
+    color: var(--cor-texto);
+}
+
+.conteudo__valor__aleatorio {
+    background-color: var(--cor-fundo-escuro);
+    border-radius: 0.8em;
+    padding: 0.2em 0.5em;
+    margin: 1em 0 0.8em 0;
+    font-family: var(--numero);
+    font-size: 72px;
+}
+
+.conteudo__lista {
+    border: solid 0.5em var(--cor-efeito);
+    border-radius: 1em;
+    
+    background-color: var(--cor-fundo-claro);
+    padding: 1em;
+}
+
+.conteudo__lista__valores {
+    max-width: 600px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 1em;
+    font-size: 24px;
+}
+
+.conteudo__lista__valores__botao,
+.conteudo__lista__valores__botao-certo,
+.conteudo__lista__valores__botao-errado {
+    background-color: var(--cor-certo);
+    color: var(--cor-fundo-escuro);
+    background-color: var(--cor-efeito);
+    color: var(--cor-principal);
+    border: none;
+    border-radius: 1em;
+    padding: 0.5em 0.8em;
+    font-family: var(--fonte);
+    font-size: 16px;
+}
+
+.conteudo__lista__valores__botao:hover {
+    background-color: var(--cor-fundo-escuro);
+    color: var(--cor-principal);
+}
+
+/*
+.conteudo__lista__valores__botao:active {
+    background-color: var(--cor-principal);
+    color: var(--cor-fundo-escuro);
+}
+*/
+
+.conteudo__lista__valores__botao-certo {
+    background-color: var(--cor-certo);
+}
+
+.conteudo__lista__valores__botao-errado {
+    background-color: var(--cor-errado);
+}
