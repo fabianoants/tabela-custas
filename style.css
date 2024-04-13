@@ -123,5 +123,25 @@ body {
 }
 
 .conteudo__lista__valores__botao-errado {
-    background-color: var(--cor-errado);
+    background-color: var(--cor-fundo-claro);
+    text-decoration: line-through;
+}
+
+.conteudo__tentativas {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    margin-top: 1em;
+    font-size: 28px;
+}
+
+.conteudo__tentativas__sem-carimbo {
+    color: var(--cor-efeito);
+}
+
+.conteudo__tentativas__com-carimbo {
+    color: var(--cor-errado);
+    border: solid 0.2em var(--cor-errado);
+    padding: 0.2em;
+    font-weight: 700;
 }
