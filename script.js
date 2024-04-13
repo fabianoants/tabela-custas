@@ -1,4 +1,6 @@
 let valorCustas = document.querySelectorAll('.conteudo__lista__valores__botao');
+let botaoRecomecar = document.getElementById('botao-reiniciar');
+let recomecar = false;
 
 // Pontuação ////////////////////////////////
 let valorAcertos = 0;
@@ -8,7 +10,6 @@ function pontuacao(){
     valorResultado.innerHTML = `${valorAcertos}`;
 }
 /////////////////////////////////////////////
-
 // Tentativas ///////////////////////////////
 let carimbosSemEfeito = document.querySelectorAll('.conteudo__tentativas__carimbos');
 console.log(carimbosSemEfeito);
@@ -29,23 +30,30 @@ function tentativas() {
     }
 }
 /////////////////////////////////////////////
-
-// Reiniciar ////////////////////////////////
-/////////////////////////////////////////////
-
 // Encerrar /////////////////////////////////
 function cancelarBotoes() {
     for (let cancelado = 0; cancelado < valorCustas.length; cancelado++) {
         const zerado = valorCustas[cancelado];
         valorCustas[cancelado] = desativar(zerado);
+        valor.classList.add('conteudo__valor__aleatorio-inativo');
     }
+    recomecar = true;
 }
 function desativar(inativo) {
     inativo.classList.add('conteudo__lista__valores__botao-errado');
     inativo.classList.remove('conteudo__lista__valores__botao');
 }
 /////////////////////////////////////////////
+// Reiniciar ////////////////////////////////
+    if (recomecar === true) {
+        ativar();
+        
+    }
+    function ativar() {
+        botaoRecomecar.classList.add('conteudo__valor__reiniciar-ativo');
+    }
 
+/////////////////////////////////////////////
 // Função para gerar valor aleatorio ////////
 let valorBase = gerarValorCustas();
 function gerarValorCustas() {
@@ -57,14 +65,12 @@ function gerarValorCustas() {
     return valorGerado;
 }
 /////////////////////////////////////////////
-
 // Função para converter numero em dinheiro /
 function formatarValor(atual) {
     let valorFormatado = atual.toLocaleString('pt-br', {minimumFractionDigits: 2});
     return valorFormatado;
 }
 /////////////////////////////////////////////
-
 // Função para limpar botões ////////////////
 function limparBotoes() {
     for (let contagem = 0; contagem < valorCustas.length; contagem++) {
@@ -77,14 +83,14 @@ function resetaClass(resetar) {
     resetar.classList.add('conteudo__lista__valores__botao');
 }
 /////////////////////////////////////////////
-
-// Funções para comparar botao com o valor //
+// Função de acerto /////////////////////////
 function acertos() {
     pontuacao();
     valorBase = gerarValorCustas();
     limparBotoes();
 }
-
+/////////////////////////////////////////////
+// Função de erro ///////////////////////////
 function erros(errado) {
     errado.classList.add('conteudo__lista__valores__botao-errado');
     errado.classList.remove('conteudo__lista__valores__botao');
@@ -93,7 +99,8 @@ function erros(errado) {
         cancelarBotoes();
     }
 }
-
+/////////////////////////////////////////////
+// Funções para comparar botao com o valor //
 function a() {
     if ((valorBase <= 1403) && (valorErros < 3)) {
         acertos();
@@ -101,7 +108,6 @@ function a() {
         erros(valorCustas[0]);
     }
 }
-
 function b() {
     if ((valorBase > 1403) && (valorBase <= 5302) && (valorErros < 3)) {
         acertos();
@@ -109,7 +115,6 @@ function b() {
         erros(valorCustas[1]);
     }
 }
-
 function c() {
     if ((valorBase > 5302) && (valorBase <= 8838) && (valorErros < 3)) {
         acertos();
@@ -117,7 +122,6 @@ function c() {
         erros(valorCustas[2]);
     }
 }
-
 function d() {
     if ((valorBase > 8838) && (valorBase <= 17680) && (valorErros < 3)) {
         acertos();
@@ -125,7 +129,6 @@ function d() {
         erros(valorCustas[3]);
     }
 }
-
 function e() {
     if ((valorBase > 17680) && (valorBase <= 35360) && (valorErros < 3)) {
         acertos();
@@ -133,7 +136,6 @@ function e() {
         erros(valorCustas[4]);
     }
 }
-
 function f() {
     if ((valorBase > 35360) && (valorBase <= 70720) && (valorErros < 3)) {
         acertos();
@@ -141,7 +143,6 @@ function f() {
         erros(valorCustas[5]);
     }
 }
-
 function g() {
     if ((valorBase > 70720) && (valorBase <= 106080) && (valorErros < 3)) {
         acertos();
@@ -149,7 +150,6 @@ function g() {
         erros(valorCustas[6]);
     }
 }
-
 function h() {
     if ((valorBase > 106080) && (valorBase <= 141440) && (valorErros < 3)) {
         acertos();
@@ -157,7 +157,6 @@ function h() {
         erros(valorCustas[7]);
     }
 }
-
 function i() {
     if ((valorBase > 141440) && (valorBase <= 176800) && (valorErros < 3)) {
         acertos();
@@ -165,7 +164,6 @@ function i() {
         erros(valorCustas[8]);
     }
 }
-
 function j() {
     if ((valorBase > 176800) && (valorBase <= 212160) && (valorErros < 3)) {
         acertos();
@@ -173,7 +171,6 @@ function j() {
         erros(valorCustas[9]);
     }
 }
-
 function k() {
     if ((valorBase > 212160) && (valorBase <= 247520) && (valorErros < 3)) {
         acertos();
@@ -181,7 +178,6 @@ function k() {
         erros(valorCustas[10]);
     }
 }
-
 function l() {
     if ((valorBase > 247520) && (valorBase <= 282880) && (valorErros < 3)) {
         acertos();
@@ -189,7 +185,6 @@ function l() {
         erros(valorCustas[11]);
     }
 }
-
 function m() {
     if ((valorBase > 282880) && (valorBase <= 303851) && (valorErros < 3)) {
         acertos();
@@ -197,7 +192,6 @@ function m() {
         erros(valorCustas[12]);
     }
 }
-
 function n() {
     if ((valorBase > 303851) && (valorBase <= 353600) && (valorErros < 3)) {
         acertos();
@@ -205,7 +199,6 @@ function n() {
         erros(valorCustas[13]);
     }
 }
-
 function o() {
     if ((valorBase > 353600) && (valorBase <= 707200) && (valorErros < 3)) {
         acertos();

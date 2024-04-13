@@ -60,12 +60,29 @@ body {
     margin: 4em 0;
 }
 
+.conteudo__valor__reiniciar-inativo {
+    background-color: var(--cor-efeito);
+    color: var(--cor-fundo-escuro);
+    border: none;
+    border-radius: 0.5em;
+    padding: 0 0.3em;
+}
+
+.conteudo__valor__reiniciar-ativo {
+    background-color: var(--cor-fundo-escuro);
+}
+
 .conteudo__valor__aleatorio {
     background-color: var(--cor-fundo-escuro);
     border-radius: 0.8em;
     padding: 0.2em 0.5em;
     font-family: var(--numero);
     font-size: 72px;
+}
+
+.conteudo__valor__aleatorio-inativo {
+    background-color: var(--cor-efeito);
+    color: var(--cor-fundo-escuro);
 }
 
 .conteudo__valor__pontos {
@@ -77,6 +94,7 @@ body {
     color: var(--cor-texto);
     padding: 0.2em 0.5em;
     font-size: 18px;
+    border-radius: 0.5em;
 }
 
 .conteudo__valor__pontos__valor {
