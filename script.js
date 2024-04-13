@@ -1,9 +1,12 @@
-let valorMaximo = 707200;
+const valorMaximo = 707200;
 let valorBase = gerarValorCustas();
 
-var valorAcertos = 0;
-console.log(valorAcertos);
-
+let valorAcertos = 0;
+function pontuacao(){
+    valorAcertos++;
+    let valorResultado = document.querySelector('.conteudo__valor__pontos__valor');
+    valorResultado.innerHTML = `${valorAcertos}`;
+}
 
 let valorCustas = document.querySelectorAll('.conteudo__lista__valores__botao');
 console.log(valorCustas[0].value);
@@ -46,7 +49,7 @@ function a() {
 
 function b() {
     if ((valorBase > 1403) && (valorBase <= 5302) ) {
-        valorAcertos++;
+        pontuacao();
         valorBase = gerarValorCustas();
         limparBotoes();
     } else {
@@ -57,7 +60,7 @@ function b() {
 
 function c() {
     if ((valorBase > 5302) && (valorBase <= 8838) ) {
-        valorAcertos++;
+        pontuacao();
         valorBase = gerarValorCustas();
         limparBotoes();
     } else {
@@ -68,7 +71,7 @@ function c() {
 
 function d() {
     if ((valorBase > 8838) && (valorBase <= 17680) ) {
-        valorAcertos++;
+        pontuacao();
         valorBase = gerarValorCustas();
         limparBotoes();
     } else {
@@ -79,7 +82,7 @@ function d() {
 
 function e() {
     if ((valorBase > 17680) && (valorBase <= 35360) ) {
-        valorAcertos++;
+        pontuacao();
         valorBase = gerarValorCustas();
         limparBotoes();
     } else {
@@ -90,7 +93,7 @@ function e() {
 
 function f() {
     if ((valorBase > 35360) && (valorBase <= 70720) ) {
-        valorAcertos++;
+        pontuacao();
         valorBase = gerarValorCustas();
         limparBotoes();
     } else {
@@ -101,7 +104,7 @@ function f() {
 
 function g() {
     if ((valorBase > 70720) && (valorBase <= 106080) ) {
-        valorAcertos++;
+        pontuacao();
         valorBase = gerarValorCustas();
         limparBotoes();
     } else {
@@ -112,7 +115,7 @@ function g() {
 
 function h() {
     if ((valorBase > 106080) && (valorBase <= 141440) ) {
-        valorAcertos++;
+        pontuacao();
         valorBase = gerarValorCustas();
         limparBotoes();
     } else {
@@ -123,7 +126,7 @@ function h() {
 
 function i() {
     if ((valorBase > 141440) && (valorBase <= 176800) ) {
-        valorAcertos++;
+        pontuacao();
         valorBase = gerarValorCustas();
         limparBotoes();
     } else {
@@ -134,7 +137,7 @@ function i() {
 
 function j() {
     if ((valorBase > 176800) && (valorBase <= 212160) ) {
-        valorAcertos++;
+        pontuacao();
         valorBase = gerarValorCustas();
         limparBotoes();
     } else {
@@ -145,7 +148,7 @@ function j() {
 
 function k() {
     if ((valorBase > 212160) && (valorBase <= 247520) ) {
-        valorAcertos++;
+        pontuacao();
         valorBase = gerarValorCustas();
         limparBotoes();
     } else {
@@ -156,7 +159,7 @@ function k() {
 
 function l() {
     if ((valorBase > 247520) && (valorBase <= 282880) ) {
-        valorAcertos++;
+        pontuacao();
         valorBase = gerarValorCustas();
         limparBotoes();
     } else {
@@ -167,7 +170,7 @@ function l() {
 
 function m() {
     if ((valorBase > 282880) && (valorBase <= 303851) ) {
-        valorAcertos++;
+        pontuacao();
         valorBase = gerarValorCustas();
         limparBotoes();
     } else {
@@ -178,7 +181,7 @@ function m() {
 
 function n() {
     if ((valorBase > 303851) && (valorBase <= 353600) ) {
-        valorAcertos++;
+        pontuacao();
         valorBase = gerarValorCustas();
         limparBotoes();
     } else {
@@ -189,7 +192,7 @@ function n() {
 
 function o() {
     if ((valorBase > 353600) && (valorBase <= 707200) ) {
-        valorAcertos++;
+        pontuacao();
         valorBase = gerarValorCustas();
         limparBotoes();
     } else {

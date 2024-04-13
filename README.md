@@ -5,7 +5,7 @@ Atualizações
 * 11/04 Geração aleatoria de valores;
 * 11/04 Comparação de valores;
 * 12/04 Gerar outro valor ao acertar;
-* 12/04 Contador de acertos;
+* 13/04 Contador de acertos;
 
 Em desenvolvimento
 * Otimizar codigo.

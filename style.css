@@ -2,14 +2,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Handlee&display=swap');
 
 :root {
-
     --cor-fundo-claro: #F8F0E5;
     --cor-fundo-escuro: #DAC0A3;
     --cor-efeito: #EADBC8;
     --cor-destaque: #101720;
     --cor-principal: #00325D;
     --cor-texto: #5A6D92;
-    --cor-certo: #4ce0b3;
     --cor-errado: #ed6a5e;
 
     --fonte: "DM Serif Display", serif;
@@ -43,7 +41,6 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-
 }
 
 .conteudo__box__titulo {
@@ -56,19 +53,41 @@ body {
     color: var(--cor-texto);
 }
 
+.conteudo__valor {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    margin: 4em 0;
+}
+
 .conteudo__valor__aleatorio {
     background-color: var(--cor-fundo-escuro);
     border-radius: 0.8em;
     padding: 0.2em 0.5em;
-    margin: 1em 0 0.8em 0;
     font-family: var(--numero);
     font-size: 72px;
+}
+
+.conteudo__valor__pontos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3em;
+    background-color: var(--cor-principal);
+    color: var(--cor-texto);
+    padding: 0.2em 0.5em;
+    font-size: 18px;
+}
+
+.conteudo__valor__pontos__valor {
+    background-color: var(--cor-principal);
+    color: var(--cor-fundo-claro);
+    font-size: 52px;
 }
 
 .conteudo__lista {
     border: solid 0.5em var(--cor-efeito);
     border-radius: 1em;
-    
     background-color: var(--cor-fundo-claro);
     padding: 1em;
 }
@@ -83,10 +102,7 @@ body {
 }
 
 .conteudo__lista__valores__botao,
-.conteudo__lista__valores__botao-certo,
 .conteudo__lista__valores__botao-errado {
-    background-color: var(--cor-certo);
-    color: var(--cor-fundo-escuro);
     background-color: var(--cor-efeito);
     color: var(--cor-principal);
     border: none;
@@ -104,10 +120,6 @@ body {
 .conteudo__lista__valores__botao:active {
     background-color: var(--cor-principal);
     color: var(--cor-fundo-escuro);
-}
-
-.conteudo__lista__valores__botao-certo {
-    background-color: var(--cor-certo);
 }
 
 .conteudo__lista__valores__botao-errado {
