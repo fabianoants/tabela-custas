@@ -82,8 +82,8 @@ body {
 }
 
 .conteudo__valor__aleatorio-inativo {
-    background-color: var(--cor-efeito);
-    color: var(--cor-fundo-escuro);
+    background-color: var(--cor-borracha);
+    color: var(--cor-fundo-claro);
 }
 
 .conteudo__valor__pontos {
@@ -111,6 +111,12 @@ body {
     padding: 1em;
 }
 
+.conteudo__lista__inativo {
+    border: solid 0.5em var(--cor-borracha);
+    border-radius: 1em;
+    padding: 1em;
+}
+
 .conteudo__lista__valores {
     max-width: 600px;
     display: flex;
@@ -120,8 +126,8 @@ body {
     font-size: 24px;
 }
 
-.conteudo__lista__valores__botao,
-.conteudo__lista__valores__botao-errado {
+.conteudo__lista__valores__botao-errado,
+.conteudo__lista__valores__botao {
     background-color: var(--cor-efeito);
     color: var(--cor-principal);
     border: none;

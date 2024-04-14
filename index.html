@@ -22,31 +22,31 @@
         </div>
         
         <div class="conteudo__valor">
-            <button onclick="reiniciarValor()" class="conteudo__valor__reiniciar" id="botao-reiniciar"><img src="img/reset.png" alt="Botão para reiniciar"></button>
-            <div class="conteudo__valor__aleatorio" id="valor"></div>
+            <button onclick="reiniciarValor()" class="conteudo__valor__reiniciar"><img src="img/play.png" alt="Botão para reiniciar" class="conteudo__valor__icone"></button>
+            <div class="conteudo__valor__aleatorio conteudo__valor__aleatorio-inativo" id="valor">$0,00</div>
             <div class="conteudo__valor__pontos">
                 <div class="conteudo__valor__pontos__texto">Sequência</div>
                 <div class="conteudo__valor__pontos__valor">0</div>
             </div>
         </div>
 
-        <div class="conteudo__lista">
+        <div class="conteudo__lista conteudo__lista__inativo" id="borda">
             <ul class="conteudo__lista__valores">
-                <li><button onclick="a()" class="conteudo__lista__valores__botao" value="334.07">$334,07</button></li>
-                <li><button onclick="b()" class="conteudo__lista__valores__botao" value="499.23">$499,23</button></li>
-                <li><button onclick="c()" class="conteudo__lista__valores__botao" value="779.49">$779,49</button></li>
-                <li><button onclick="d()" class="conteudo__lista__valores__botao" value="1113.57">$1.113,57</button></li>
-                <li><button onclick="e()" class="conteudo__lista__valores__botao" value="1505.22">$1.505,22</button></li>
-                <li><button onclick="f()" class="conteudo__lista__valores__botao" value="1785.58">$1.785,58</button></li>
-                <li><button onclick="g()" class="conteudo__lista__valores__botao" value="2119.65">$2.119,65</button></li>
-                <li><button onclick="h()" class="conteudo__lista__valores__botao" value="2511.28">$2.511,28</button></li>
-                <li><button onclick="i()" class="conteudo__lista__valores__botao" value="2845.44">$2.845,44</button></li>
-                <li><button onclick="j()" class="conteudo__lista__valores__botao" value="3183.32">$3.183,32</button></li>
-                <li><button onclick="k()" class="conteudo__lista__valores__botao" value="3571.16">$3.571,16</button></li>
-                <li><button onclick="l()" class="conteudo__lista__valores__botao" value="3909.11">$3.909,11</button></li>
-                <li><button onclick="m()" class="conteudo__lista__valores__botao" value="4300.75">$4.300,75</button></li>
-                <li><button onclick="n()" class="conteudo__lista__valores__botao" value="4577.22">$4.577,22</button></li>
-                <li><button onclick="o()" class="conteudo__lista__valores__botao" value="5080.25">$5.080,25</button></li>
+                <li><button onclick="a()" disabled class="conteudo__lista__quantidade conteudo__lista__valores__botao-errado" value="334.07">$334,07</button></li>
+                <li><button onclick="b()" disabled class="conteudo__lista__quantidade conteudo__lista__valores__botao-errado" value="499.23">$499,23</button></li>
+                <li><button onclick="c()" disabled class="conteudo__lista__quantidade conteudo__lista__valores__botao-errado" value="779.49">$779,49</button></li>
+                <li><button onclick="d()" disabled class="conteudo__lista__quantidade conteudo__lista__valores__botao-errado" value="1113.57">$1.113,57</button></li>
+                <li><button onclick="e()" disabled class="conteudo__lista__quantidade conteudo__lista__valores__botao-errado" value="1505.22">$1.505,22</button></li>
+                <li><button onclick="f()" disabled class="conteudo__lista__quantidade conteudo__lista__valores__botao-errado" value="1785.58">$1.785,58</button></li>
+                <li><button onclick="g()" disabled class="conteudo__lista__quantidade conteudo__lista__valores__botao-errado" value="2119.65">$2.119,65</button></li>
+                <li><button onclick="h()" disabled class="conteudo__lista__quantidade conteudo__lista__valores__botao-errado" value="2511.28">$2.511,28</button></li>
+                <li><button onclick="i()" disabled class="conteudo__lista__quantidade conteudo__lista__valores__botao-errado" value="2845.44">$2.845,44</button></li>
+                <li><button onclick="j()" disabled class="conteudo__lista__quantidade conteudo__lista__valores__botao-errado" value="3183.32">$3.183,32</button></li>
+                <li><button onclick="k()" disabled class="conteudo__lista__quantidade conteudo__lista__valores__botao-errado" value="3571.16">$3.571,16</button></li>
+                <li><button onclick="l()" disabled class="conteudo__lista__quantidade conteudo__lista__valores__botao-errado" value="3909.11">$3.909,11</button></li>
+                <li><button onclick="m()" disabled class="conteudo__lista__quantidade conteudo__lista__valores__botao-errado" value="4300.75">$4.300,75</button></li>
+                <li><button onclick="n()" disabled class="conteudo__lista__quantidade conteudo__lista__valores__botao-errado" value="4577.22">$4.577,22</button></li>
+                <li><button onclick="o()" disabled class="conteudo__lista__quantidade conteudo__lista__valores__botao-errado" value="5080.25">$5.080,25</button></li>
             </ul>
         </div>
 
