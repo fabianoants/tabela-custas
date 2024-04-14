@@ -1,18 +1,33 @@
+/////////////////////////////////////////////
+// Gerar valor aleatorio ////////////////////
 let valorCustas = document.querySelectorAll('.conteudo__lista__valores__botao');
-let botaoRecomecar = document.getElementById('botao-reiniciar');
-let recomecar = false;
-
+let valorBase = gerarValorCustas();
+function gerarValorCustas() {
+    const valorMaximo = 707200;
+    let valorGerado = parseInt(Math.random() * valorMaximo);
+    let valorBaseFormatado = formatarValor(valorGerado);
+    let valor = document.getElementById('valor');
+    valor.innerHTML = `$${valorBaseFormatado}`;
+    return valorGerado;
+}
+/////////////////////////////////////////////
+// Converter numero em dinheiro /////////////
+function formatarValor(atual) {
+    let valorFormatado = atual.toLocaleString('pt-br', {minimumFractionDigits: 2});
+    return valorFormatado;
+}
+/////////////////////////////////////////////
 // Pontuação ////////////////////////////////
 let valorAcertos = 0;
+let valorResultado = document.querySelector('.conteudo__valor__pontos__valor');
 function pontuacao(){
     valorAcertos++;
-    let valorResultado = document.querySelector('.conteudo__valor__pontos__valor');
+    valorResultado = document.querySelector('.conteudo__valor__pontos__valor');
     valorResultado.innerHTML = `${valorAcertos}`;
 }
 /////////////////////////////////////////////
 // Tentativas ///////////////////////////////
 let carimbosSemEfeito = document.querySelectorAll('.conteudo__tentativas__carimbos');
-console.log(carimbosSemEfeito);
 let valorErros = 0;
 function tentativas() {
     valorErros++;
@@ -31,13 +46,14 @@ function tentativas() {
 }
 /////////////////////////////////////////////
 // Encerrar /////////////////////////////////
+const botaoReiniciar = document.querySelector('.conteudo__valor__reiniciar')
 function cancelarBotoes() {
     for (let cancelado = 0; cancelado < valorCustas.length; cancelado++) {
         const zerado = valorCustas[cancelado];
         valorCustas[cancelado] = desativar(zerado);
         valor.classList.add('conteudo__valor__aleatorio-inativo');
     }
-    recomecar = true;
+    botaoReiniciar.classList.add('conteudo__valor__reiniciar-ativado');
 }
 function desativar(inativo) {
     inativo.classList.add('conteudo__lista__valores__botao-errado');
@@ -45,30 +61,25 @@ function desativar(inativo) {
 }
 /////////////////////////////////////////////
 // Reiniciar ////////////////////////////////
-    if (recomecar === true) {
-        ativar();
-        
-    }
-    function ativar() {
-        botaoRecomecar.classList.add('conteudo__valor__reiniciar-ativo');
-    }
-
-/////////////////////////////////////////////
-// Função para gerar valor aleatorio ////////
-let valorBase = gerarValorCustas();
-function gerarValorCustas() {
-    const valorMaximo = 707200;
-    let valorGerado = parseInt(Math.random() * valorMaximo);
-    let valorBaseFormatado = formatarValor(valorGerado);
-    let valor = document.getElementById('valor');
-    valor.innerHTML = `$${valorBaseFormatado}`;
-    return valorGerado;
+function reiniciarValor() {
+    valor.classList.remove('conteudo__valor__aleatorio-inativo');
+    botaoReiniciar.classList.remove('conteudo__valor__reiniciar-ativado');
+    valorBase = gerarValorCustas();
+    reiniciarSequencia();
+    reiniciarCarimbos();
+    limparBotoes();
 }
-/////////////////////////////////////////////
-// Função para converter numero em dinheiro /
-function formatarValor(atual) {
-    let valorFormatado = atual.toLocaleString('pt-br', {minimumFractionDigits: 2});
-    return valorFormatado;
+function reiniciarSequencia() {
+    valorAcertos = 0;
+    valorResultado.innerHTML = `${valorAcertos}`;
+    valorErros = 0;
+}
+function reiniciarCarimbos() {
+    for (let carimbo = 0; carimbo < carimbosSemEfeito.length; carimbo++) {
+        const carimboLimpo = carimbosSemEfeito[carimbo];
+        carimboLimpo.classList.remove('conteudo__tentativas__com-carimbo');
+        carimboLimpo.classList.add('conteudo__tentativas__sem-carimbo');
+    }
 }
 /////////////////////////////////////////////
 // Função para limpar botões ////////////////
@@ -76,22 +87,24 @@ function limparBotoes() {
     for (let contagem = 0; contagem < valorCustas.length; contagem++) {
         const contador = valorCustas[contagem];
         valorCustas[contagem] = resetaClass(contador);
-    }
+            }
 }
 function resetaClass(resetar) {
     resetar.classList.remove('conteudo__lista__valores__botao-errado');
     resetar.classList.add('conteudo__lista__valores__botao');
+    resetar.removeAttribute('disabled');
 }
 /////////////////////////////////////////////
-// Função de acerto /////////////////////////
+// Acertar //////////////////////////////////
 function acertos() {
     pontuacao();
     valorBase = gerarValorCustas();
     limparBotoes();
 }
 /////////////////////////////////////////////
-// Função de erro ///////////////////////////
+// Errar ////////////////////////////////////
 function erros(errado) {
+    errado.setAttribute('disabled', '');
     errado.classList.add('conteudo__lista__valores__botao-errado');
     errado.classList.remove('conteudo__lista__valores__botao');
     tentativas();

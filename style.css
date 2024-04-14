@@ -5,10 +5,11 @@
     --cor-fundo-claro: #F8F0E5;
     --cor-fundo-escuro: #DAC0A3;
     --cor-efeito: #EADBC8;
+    --cor-borracha: #EFEAE4;
     --cor-destaque: #101720;
     --cor-principal: #00325D;
     --cor-texto: #5A6D92;
-    --cor-errado: #ed6a5e;
+    --cor-errado: #ED6A5E;
 
     --fonte: "DM Serif Display", serif;
     --numero: "Handlee";
@@ -60,15 +61,15 @@ body {
     margin: 4em 0;
 }
 
-.conteudo__valor__reiniciar-inativo {
+.conteudo__valor__reiniciar {
     background-color: var(--cor-efeito);
-    color: var(--cor-fundo-escuro);
     border: none;
     border-radius: 0.5em;
     padding: 0 0.3em;
 }
 
-.conteudo__valor__reiniciar-ativo {
+.conteudo__valor__reiniciar-ativado,
+.conteudo__valor__reiniciar:hover {
     background-color: var(--cor-fundo-escuro);
 }
 
@@ -141,8 +142,9 @@ body {
 }
 
 .conteudo__lista__valores__botao-errado {
-    background-color: var(--cor-fundo-claro);
-    text-decoration: line-through;
+    background-color: var(--cor-borracha);
+    color: var(--cor-fundo-claro);
+    
 }
 
 .conteudo__tentativas {
@@ -154,7 +156,10 @@ body {
 }
 
 .conteudo__tentativas__sem-carimbo {
-    color: var(--cor-efeito);
+    color: var(--cor-borracha);
+    border: solid 0.2em var(--cor-borracha);
+    padding: 0.2em;
+    font-weight: 700;
 }
 
 .conteudo__tentativas__com-carimbo {

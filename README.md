@@ -6,13 +6,13 @@ Atualizações
 * 11/04 Comparação de valores;
 * 12/04 Gerar outro valor ao acertar;
 * 13/04 Contador de acertos;
-* Numero maximo de tentativas para acertos;
+* 13/04 Numero maximo de tentativas para acertos;
+* 14/04 Botão para reiniciar;
 
 Em desenvolvimento
-* Botão para reiniciar;
+* Barra de cronometro para acertar;
 
 Futuramente
-* Barra de cronometro para acertar;
 * Login com nome;
 * Rank de pontuação;
 * Animações.
