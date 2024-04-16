@@ -58,7 +58,7 @@ body {
     display: flex;
     align-items: center;
     gap: 1em;
-    margin: 4em 0;
+    margin: 3em;
 }
 
 .conteudo__valor__reiniciar {
@@ -103,11 +103,50 @@ body {
     color: var(--cor-fundo-claro);
     font-size: 52px;
 }
+/* --------------------------------------------------------------------------- */
+.conteudo__linha {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+.conteudo__linha__fundo {
+    width: 600px;
+    height: 5px;
+    background-color: var(--cor-borracha);
+    position: relative;
+    transform: rotate(-2deg);
+  }
+  
+  .conteudo__linha__frente {
+    width: 0;
+    height: 5px;
+    background-color: var(--cor-principal);
+    position: absolute;
+    
+    transform-origin: bottom left;
+    
+    animation: linhaAumentando 5s linear forwards;
+  }
+  
+  @keyframes linhaAumentando {
+    to {
+      width: 100%;
+    }
+  }
+
+
+
+
+
+/* --------------------------------------------------------------------------- */
 .conteudo__lista {
     border: solid 0.5em var(--cor-efeito);
     border-radius: 1em;
     background-color: var(--cor-fundo-claro);
+    margin-top: 1.5em;
     padding: 1em;
 }
 

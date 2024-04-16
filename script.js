@@ -36,6 +36,7 @@ function cancelarBotoes() {
     }
     botaoReiniciar.classList.add('conteudo__valor__reiniciar-ativado');
     bordaValores.classList.add('conteudo__lista__inativo');
+    linhaFrente.classList.remove('conteudo__linha__frente');
 }
 function desativar(inativo) {
     inativo.classList.add('conteudo__lista__valores__botao-errado');
@@ -48,6 +49,7 @@ let botaoPlay = document.querySelector('.conteudo__valor__icone');
 function reiniciarValor() {
     bordaValores.classList.remove('conteudo__lista__inativo');
     valor.classList.remove('conteudo__valor__aleatorio-inativo');
+    linhaFrente.classList.add('conteudo__linha__frente');
     botaoReiniciar.classList.remove('conteudo__valor__reiniciar-ativado');
     botaoPlay.setAttribute('src', 'img/reset.png');
     valorBase = gerarValorCustas();
@@ -87,7 +89,7 @@ function formatarValor(atual) {
     return valorFormatado;
 }
 /////////////////////////////////////////////
-// Função para limpar botões ////////////////
+// Limpar botões ////////////////////////////
 function limparBotoes() {
     for (let contagem = 0; contagem < valorCustas.length; contagem++) {
         const contador = valorCustas[contagem];
@@ -118,110 +120,16 @@ function erros(errado) {
     }
 }
 /////////////////////////////////////////////
-// Funções para comparar botao com o valor //
-function a() {
-    if ((valorBase <= 1403) && (valorErros < 3)) {
+// Comparar botao com o valor ///////////////
+function compararValor(vMin, vMax, botao) {
+    if ((valorBase > vMin) && (valorBase <= vMax) && (valorErros < 3)) {
         acertos();
     } else {
-        erros(valorCustas[0]);
+        erros(botao);
     }
 }
-function b() {
-    if ((valorBase > 1403) && (valorBase <= 5302) && (valorErros < 3)) {
-        acertos();
-    } else {
-        erros(valorCustas[1]);
-    }
-}
-function c() {
-    if ((valorBase > 5302) && (valorBase <= 8838) && (valorErros < 3)) {
-        acertos();
-    } else {
-        erros(valorCustas[2]);
-    }
-}
-function d() {
-    if ((valorBase > 8838) && (valorBase <= 17680) && (valorErros < 3)) {
-        acertos();
-    } else {
-        erros(valorCustas[3]);
-    }
-}
-function e() {
-    if ((valorBase > 17680) && (valorBase <= 35360) && (valorErros < 3)) {
-        acertos();
-    } else {
-        erros(valorCustas[4]);
-    }
-}
-function f() {
-    if ((valorBase > 35360) && (valorBase <= 70720) && (valorErros < 3)) {
-        acertos();
-    } else {
-        erros(valorCustas[5]);
-    }
-}
-function g() {
-    if ((valorBase > 70720) && (valorBase <= 106080) && (valorErros < 3)) {
-        acertos();
-    } else {
-        erros(valorCustas[6]);
-    }
-}
-function h() {
-    if ((valorBase > 106080) && (valorBase <= 141440) && (valorErros < 3)) {
-        acertos();
-    } else {
-        erros(valorCustas[7]);
-    }
-}
-function i() {
-    if ((valorBase > 141440) && (valorBase <= 176800) && (valorErros < 3)) {
-        acertos();
-    } else {
-        erros(valorCustas[8]);
-    }
-}
-function j() {
-    if ((valorBase > 176800) && (valorBase <= 212160) && (valorErros < 3)) {
-        acertos();
-    } else {
-        erros(valorCustas[9]);
-    }
-}
-function k() {
-    if ((valorBase > 212160) && (valorBase <= 247520) && (valorErros < 3)) {
-        acertos();
-    } else {
-        erros(valorCustas[10]);
-    }
-}
-function l() {
-    if ((valorBase > 247520) && (valorBase <= 282880) && (valorErros < 3)) {
-        acertos();
-    } else {
-        erros(valorCustas[11]);
-    }
-}
-function m() {
-    if ((valorBase > 282880) && (valorBase <= 303851) && (valorErros < 3)) {
-        acertos();
-    } else {
-        erros(valorCustas[12]);
-    }
-}
-function n() {
-    if ((valorBase > 303851) && (valorBase <= 353600) && (valorErros < 3)) {
-        acertos();
-    } else {
-        erros(valorCustas[13]);
-    }
-}
-function o() {
-    if ((valorBase > 353600) && (valorBase <= 707200) && (valorErros < 3)) {
-        acertos();
-    } else {
-        erros(valorCustas[14]);
-    }
-}
+/////////////////////////////////////////////
+// Linha ////////////////////////////////////
+const linhaFrente = document.getElementById('linha');
+
 /////////////////////////////////////////////
