@@ -58,7 +58,6 @@ function reiniciarValor() {
     reiniciarCarimbos();
     limparBotoes();
     adicionarLinha();
-    tempo();
 }
 function gerarValorCustas() {
     const valorMaximo = 707200;
