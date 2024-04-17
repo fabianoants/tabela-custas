@@ -36,7 +36,7 @@ function cancelarBotoes() {
     }
     botaoReiniciar.classList.add('conteudo__valor__reiniciar-ativado');
     bordaValores.classList.add('conteudo__lista__inativo');
-    linhaFrente.classList.remove('conteudo__linha__frente');
+    removerLinha();
 }
 function desativar(inativo) {
     inativo.classList.add('conteudo__lista__valores__botao-errado');
@@ -49,13 +49,13 @@ let botaoPlay = document.querySelector('.conteudo__valor__icone');
 function reiniciarValor() {
     bordaValores.classList.remove('conteudo__lista__inativo');
     valor.classList.remove('conteudo__valor__aleatorio-inativo');
-    linhaFrente.classList.add('conteudo__linha__frente');
     botaoReiniciar.classList.remove('conteudo__valor__reiniciar-ativado');
     botaoPlay.setAttribute('src', 'img/reset.png');
     valorBase = gerarValorCustas();
     reiniciarSequencia();
     reiniciarCarimbos();
     limparBotoes();
+    adicionarLinha();
 }
 function gerarValorCustas() {
     const valorMaximo = 707200;
@@ -107,6 +107,7 @@ function acertos() {
     pontuacao();
     valorBase = gerarValorCustas();
     limparBotoes();
+    adicionarLinha();
 }
 /////////////////////////////////////////////
 // Errar ////////////////////////////////////
@@ -131,5 +132,18 @@ function compararValor(vMin, vMax, botao) {
 /////////////////////////////////////////////
 // Linha ////////////////////////////////////
 const linhaFrente = document.getElementById('linha');
-
+function adicionarLinha() {
+    if (linhaFrente.classList.contains('conteudo__linha__ativa-a')) {
+        linhaFrente.classList.remove('conteudo__linha__ativa-a');
+        linhaFrente.classList.add('conteudo__linha__ativa-b');
+    } else {
+        linhaFrente.classList.remove('conteudo__linha__ativa-b');
+        linhaFrente.classList.add('conteudo__linha__ativa-a');
+    }
+}
+function removerLinha() {
+    linhaFrente.classList.remove('conteudo__linha__ativa-a');
+    linhaFrente.classList.remove('conteudo__linha__ativa-b');
+}
 /////////////////////////////////////////////
+// Tempo ////////////////////////////////////
