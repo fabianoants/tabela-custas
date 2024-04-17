@@ -44,6 +44,8 @@ function desativar(inativo) {
 }
 /////////////////////////////////////////////
 // Começar //////////////////////////////////
+let valorCustas = document.querySelectorAll('.conteudo__lista__quantidade');
+let valorBase = 0;
 let bordaValores = document.getElementById('borda');
 let botaoPlay = document.querySelector('.conteudo__valor__icone');
 function reiniciarValor() {
@@ -56,6 +58,7 @@ function reiniciarValor() {
     reiniciarCarimbos();
     limparBotoes();
     adicionarLinha();
+    tempo();
 }
 function gerarValorCustas() {
     const valorMaximo = 707200;
@@ -77,11 +80,6 @@ function reiniciarCarimbos() {
         carimboLimpo.classList.add('conteudo__tentativas__sem-carimbo');
     }
 }
-/////////////////////////////////////////////
-// Gerar valor aleatorio ////////////////////
-let valorCustas = document.querySelectorAll('.conteudo__lista__quantidade');
-let valorBase = 0;
-
 /////////////////////////////////////////////
 // Converter numero em dinheiro /////////////
 function formatarValor(atual) {

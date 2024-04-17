@@ -1,0 +1,37 @@
+.conteudo__linha__fundo {
+    width: 600px;
+    height: 5px;
+    background-color: var(--cor-borracha);
+    position: relative;
+    transform: rotate(-2deg);
+}
+  
+.conteudo__linha__ativa-b {
+    width: 0;
+    height: 5px;
+    background-color: var(--cor-principal);
+    position: absolute;
+    transform-origin: bottom left;
+    animation: linhaAumentando-a 5s linear forwards;
+}
+  
+@keyframes linhaAumentando-a {
+    to {
+      width: 100%;
+    }
+}
+
+.conteudo__linha__ativa-a {
+    width: 0;
+    height: 5px;
+    background-color: var(--cor-errado);
+    position: absolute;
+    transform-origin: bottom left;
+    animation: linhaAumentando-b 5s linear forwards;
+}
+  
+@keyframes linhaAumentando-b {
+    to {
+      width: 100%;
+    }
+}

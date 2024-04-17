@@ -1,3 +1,4 @@
+@import url(styles/linhas.css);
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Handlee&display=swap');
 
@@ -10,7 +11,6 @@
     --cor-principal: #00325D;
     --cor-texto: #5A6D92;
     --cor-errado: #ED6A5E;
-
     --fonte: "DM Serif Display", serif;
     --numero: "Handlee";
 }
@@ -103,49 +103,7 @@ body {
     color: var(--cor-fundo-claro);
     font-size: 52px;
 }
-/* --------------------------------------------------------------------------- */
-.conteudo__linha__fundo {
-    width: 600px;
-    height: 5px;
-    background-color: var(--cor-borracha);
-    position: relative;
-    transform: rotate(-2deg);
-}
-  
-.conteudo__linha__ativa-b {
-    width: 0;
-    height: 5px;
-    background-color: var(--cor-principal);
-    position: absolute;
-    
-    transform-origin: bottom left;
-    
-    animation: linhaAumentando-a 2s linear forwards;
-}
-  
-@keyframes linhaAumentando-a {
-    to {
-      width: 100%;
-    }
-}
 
-.conteudo__linha__ativa-a {
-    width: 0;
-    height: 5px;
-    background-color: var(--cor-errado);
-    position: absolute;
-    
-    transform-origin: bottom left;
-    
-    animation: linhaAumentando-b 2s linear forwards;
-}
-  
-@keyframes linhaAumentando-b {
-    to {
-      width: 100%;
-    }
-}
-/* --------------------------------------------------------------------------- */
 .conteudo__lista {
     border: solid 0.5em var(--cor-efeito);
     border-radius: 1em;
@@ -193,7 +151,6 @@ body {
 .conteudo__lista__valores__botao-errado {
     background-color: var(--cor-borracha);
     color: var(--cor-fundo-claro);
-    
 }
 
 .conteudo__tentativas {
