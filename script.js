@@ -4,6 +4,7 @@ let valorAcertos = 0;
 let valorResultado = document.querySelector('.conteudo__valor__pontos__valor');
 function pontuacao(){
     valorAcertos++;
+    pauseTempo();
     valorResultado.innerHTML = `${valorAcertos}`;
 }
 /////////////////////////////////////////////
@@ -33,9 +34,11 @@ function cancelarBotoes() {
         const zerado = valorCustas[cancelado];
         valorCustas[cancelado] = desativar(zerado);
         valor.classList.add('conteudo__valor__aleatorio-inativo');
+        valorCustas[cancelado].setAttribute('disabled', '');
     }
     botaoReiniciar.classList.add('conteudo__valor__reiniciar-ativado');
     bordaValores.classList.add('conteudo__lista__inativo');
+    pauseTempo();
     removerLinha();
 }
 function desativar(inativo) {
@@ -49,6 +52,7 @@ let valorBase = 0;
 let bordaValores = document.getElementById('borda');
 let botaoPlay = document.querySelector('.conteudo__valor__icone');
 function reiniciarValor() {
+    pauseTempo();
     bordaValores.classList.remove('conteudo__lista__inativo');
     valor.classList.remove('conteudo__valor__aleatorio-inativo');
     botaoReiniciar.classList.remove('conteudo__valor__reiniciar-ativado');
@@ -65,6 +69,7 @@ function gerarValorCustas() {
     let valorBaseFormatado = formatarValor(valorGerado);
     let valor = document.getElementById('valor');
     valor.innerHTML = `$${valorBaseFormatado}`;
+    startTempo();
     return valorGerado;
 }
 function reiniciarSequencia() {
@@ -97,6 +102,15 @@ function resetaClass(resetar) {
     resetar.classList.remove('conteudo__lista__valores__botao-errado');
     resetar.classList.add('conteudo__lista__valores__botao');
     resetar.removeAttribute('disabled');
+}
+/////////////////////////////////////////////
+// Tempo ////////////////////////////////////
+let tempo = 0;
+function startTempo() {
+    tempo = setTimeout(cancelarBotoes, 5000);
+}
+function pauseTempo() {
+    clearTimeout(tempo);
 }
 /////////////////////////////////////////////
 // Acertar //////////////////////////////////
@@ -143,4 +157,3 @@ function removerLinha() {
     linhaFrente.classList.remove('conteudo__linha__ativa-b');
 }
 /////////////////////////////////////////////
-// Tempo ////////////////////////////////////
