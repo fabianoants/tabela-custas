@@ -4,7 +4,6 @@ let valorAcertos = 0;
 let valorResultado = document.querySelector('.conteudo__valor__pontos__valor');
 function pontuacao(){
     valorAcertos++;
-    pauseTempo();
     valorResultado.innerHTML = `${valorAcertos}`;
 }
 /////////////////////////////////////////////
@@ -52,18 +51,18 @@ let valorBase = 0;
 let bordaValores = document.getElementById('borda');
 let botaoPlay = document.querySelector('.conteudo__valor__icone');
 function reiniciarValor() {
-    pauseTempo();
     bordaValores.classList.remove('conteudo__lista__inativo');
     valor.classList.remove('conteudo__valor__aleatorio-inativo');
     botaoReiniciar.classList.remove('conteudo__valor__reiniciar-ativado');
     botaoPlay.setAttribute('src', 'img/reset.png');
-    valorBase = gerarValorCustas();
     reiniciarSequencia();
+    valorBase = gerarValorCustas();
     reiniciarCarimbos();
     limparBotoes();
     adicionarLinha();
 }
 function gerarValorCustas() {
+    pauseTempo();
     const valorMaximo = 707200;
     let valorGerado = parseInt(Math.random() * valorMaximo);
     let valorBaseFormatado = formatarValor(valorGerado);
@@ -107,7 +106,11 @@ function resetaClass(resetar) {
 // Tempo ////////////////////////////////////
 let tempo = 0;
 function startTempo() {
-    tempo = setTimeout(cancelarBotoes, 5000);
+    if (valorAcertos > 10) {
+        tempo = setTimeout(cancelarBotoes, 2500);
+    } else {
+        tempo = setTimeout(cancelarBotoes, 5000);  
+    }
 }
 function pauseTempo() {
     clearTimeout(tempo);

@@ -6,7 +6,7 @@
     transform: rotate(-2deg);
 }
   
-.conteudo__linha__ativa-b {
+.conteudo__linha__ativa-a {
     width: 0;
     height: 5px;
     background-color: var(--cor-principal);
@@ -21,10 +21,10 @@
     }
 }
 
-.conteudo__linha__ativa-a {
+.conteudo__linha__ativa-b {
     width: 0;
     height: 5px;
-    background-color: var(--cor-errado);
+    background-color: var(--cor-principal);
     position: absolute;
     transform-origin: bottom left;
     animation: linhaAumentando-b 5s linear forwards;
