@@ -5,33 +5,57 @@
     position: relative;
     transform: rotate(-2deg);
 }
-  
-.conteudo__linha__ativa-a {
+
+.conteudo__linha__ativa-a,
+.conteudo__linha__ativa-b,
+.conteudo__linha__ativa-c,
+.conteudo__linha__ativa-d,
+.conteudo__linha__ativa-e,
+.conteudo__linha__ativa-f {
     width: 0;
     height: 5px;
-    background-color: var(--cor-principal);
     position: absolute;
     transform-origin: bottom left;
-    animation: linhaAumentando-a 5s linear forwards;
 }
-  
+
 @keyframes linhaAumentando-a {
     to {
       width: 100%;
     }
 }
 
-.conteudo__linha__ativa-b {
-    width: 0;
-    height: 5px;
-    background-color: var(--cor-principal);
-    position: absolute;
-    transform-origin: bottom left;
-    animation: linhaAumentando-b 5s linear forwards;
-}
-  
 @keyframes linhaAumentando-b {
     to {
       width: 100%;
     }
+}
+
+.conteudo__linha__ativa-a {
+    background-color: var(--cor-texto);
+    animation: linhaAumentando-a 6s linear forwards;
+}
+
+.conteudo__linha__ativa-b {
+    background-color: var(--cor-texto);
+    animation: linhaAumentando-b 6s linear forwards;
+}
+
+.conteudo__linha__ativa-c {
+    background-color: var(--cor-principal);
+    animation: linhaAumentando-a 3s linear forwards;
+}
+
+.conteudo__linha__ativa-d {
+    background-color: var(--cor-principal);
+    animation: linhaAumentando-b 3s linear forwards;
+}
+  
+.conteudo__linha__ativa-e {
+    background-color: var(--cor-destaque);
+    animation: linhaAumentando-a 1.5s linear forwards;
+}
+
+.conteudo__linha__ativa-f {
+    background-color: var(--cor-destaque);
+    animation: linhaAumentando-b 1.5s linear forwards;
 }

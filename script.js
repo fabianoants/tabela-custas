@@ -39,6 +39,7 @@ function cancelarBotoes() {
     bordaValores.classList.add('conteudo__lista__inativo');
     pauseTempo();
     removerLinha();
+    nivel = "Auxiliar";
 }
 function desativar(inativo) {
     inativo.classList.add('conteudo__lista__valores__botao-errado');
@@ -105,11 +106,28 @@ function resetaClass(resetar) {
 /////////////////////////////////////////////
 // Tempo ////////////////////////////////////
 let tempo = 0;
+let nivel = "Auxiliar";
 function startTempo() {
-    if (valorAcertos > 10) {
-        tempo = setTimeout(cancelarBotoes, 2500);
-    } else {
-        tempo = setTimeout(cancelarBotoes, 5000);  
+    if (valorAcertos <= 10) {
+        tempo = setTimeout(cancelarBotoes, 6000);  
+    }
+    if ((valorAcertos > 10) && (valorAcertos <= 30)) {
+        tempo = setTimeout(cancelarBotoes, 3000);
+        nivel = "Escrevente";
+        if (linhaFrente.classList.contains('conteudo__linha__ativa-a') || linhaFrente.classList.contains('conteudo__linha__ativa-b') ) {
+            linhaFrente.classList.remove('conteudo__linha__ativa-a');
+            linhaFrente.classList.remove('conteudo__linha__ativa-b');
+            linhaFrente.classList.add('conteudo__linha__ativa-c');
+        }
+    } 
+    if (valorAcertos > 30) {
+        tempo = setTimeout(cancelarBotoes, 1500);
+        nivel = "Tabelião";
+        if (linhaFrente.classList.contains('conteudo__linha__ativa-c') || linhaFrente.classList.contains('conteudo__linha__ativa-d') ) {
+            linhaFrente.classList.remove('conteudo__linha__ativa-c');
+            linhaFrente.classList.remove('conteudo__linha__ativa-d');
+            linhaFrente.classList.add('conteudo__linha__ativa-e');
+        }
     }
 }
 function pauseTempo() {
@@ -147,16 +165,40 @@ function compararValor(vMin, vMax, botao) {
 // Linha ////////////////////////////////////
 const linhaFrente = document.getElementById('linha');
 function adicionarLinha() {
-    if (linhaFrente.classList.contains('conteudo__linha__ativa-a')) {
-        linhaFrente.classList.remove('conteudo__linha__ativa-a');
-        linhaFrente.classList.add('conteudo__linha__ativa-b');
-    } else {
-        linhaFrente.classList.remove('conteudo__linha__ativa-b');
-        linhaFrente.classList.add('conteudo__linha__ativa-a');
+    if (nivel === "Auxiliar") {
+        if (linhaFrente.classList.contains('conteudo__linha__ativa-a')) {
+            linhaFrente.classList.remove('conteudo__linha__ativa-a');
+            linhaFrente.classList.add('conteudo__linha__ativa-b');
+        } else {
+            linhaFrente.classList.remove('conteudo__linha__ativa-b');
+            linhaFrente.classList.add('conteudo__linha__ativa-a');
+        }
     }
+    if (nivel === "Escrevente") {
+        if (linhaFrente.classList.contains('conteudo__linha__ativa-c')) {
+            linhaFrente.classList.remove('conteudo__linha__ativa-c');
+            linhaFrente.classList.add('conteudo__linha__ativa-d');
+        } else {
+            linhaFrente.classList.remove('conteudo__linha__ativa-d');
+            linhaFrente.classList.add('conteudo__linha__ativa-c');
+        }
+    }
+    if (nivel === "Tabelião") {
+        if (linhaFrente.classList.contains('conteudo__linha__ativa-e')) {
+            linhaFrente.classList.remove('conteudo__linha__ativa-e');
+            linhaFrente.classList.add('conteudo__linha__ativa-f');
+        } else {
+            linhaFrente.classList.remove('conteudo__linha__ativa-f');
+            linhaFrente.classList.add('conteudo__linha__ativa-e');
+        }
+    }      
 }
 function removerLinha() {
     linhaFrente.classList.remove('conteudo__linha__ativa-a');
     linhaFrente.classList.remove('conteudo__linha__ativa-b');
+    linhaFrente.classList.remove('conteudo__linha__ativa-c');
+    linhaFrente.classList.remove('conteudo__linha__ativa-d');
+    linhaFrente.classList.remove('conteudo__linha__ativa-e');
+    linhaFrente.classList.remove('conteudo__linha__ativa-f');
 }
 /////////////////////////////////////////////

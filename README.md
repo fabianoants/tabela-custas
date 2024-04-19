@@ -8,9 +8,11 @@ Atualizações
 * 13/04 Contador de acertos;
 * 13/04 Numero maximo de tentativas para acertos;
 * 14/04 Botão para reiniciar;
+* 18/04 Barra de cronometro para acertar;
+* 18/04 Niveis;
 
 Em desenvolvimento
-* Barra de cronometro para acertar;
+* Layout
 
 Futuramente
 * Login com nome;
