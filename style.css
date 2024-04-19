@@ -44,8 +44,9 @@ body {
 }
 
 .conteudo__box__subtitulo {
-    font-size: 24px;
+    font-size: 18px;
     color: var(--cor-texto);
+    text-align: start;
 }
 
 .conteudo__valor {
@@ -54,7 +55,7 @@ body {
     justify-content: center;
     align-items: center;
     gap: 1em;
-    margin: 3em;
+    margin: 1.5em auto;
 }
 
 .conteudo__valor__reiniciar {
@@ -153,8 +154,8 @@ body {
     align-items: center;
     flex-wrap: wrap;
     gap: 1em;
-    margin-top: 1em;
-    font-size: 28px;
+    margin-top: 0.5em;
+    font-size: 24px;
     font-weight: 700;
 }
 
