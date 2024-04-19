@@ -161,12 +161,12 @@ body {
 
 .conteudo__tentativas__sem-carimbo {
     color: var(--cor-borracha);
-    border: solid 0.5em var(--cor-borracha);
+    border: solid 0.3em var(--cor-borracha);
     padding: 0.2em;
 }
 
 .conteudo__tentativas__com-carimbo {
     color: var(--cor-errado);
-    border: solid 0.5em var(--cor-errado);
+    border: solid 0.3em var(--cor-errado);
     padding: 0.2em;
 }
