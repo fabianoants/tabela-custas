@@ -10,9 +10,10 @@ Atualizações
 * 14/04 Botão para reiniciar;
 * 18/04 Barra de cronometro para acertar;
 * 18/04 Niveis;
+* 20/04 Layout responsivo;
 
 Em desenvolvimento
-* Layout
+
 
 Futuramente
 * Login com nome;
