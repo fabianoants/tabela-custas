@@ -3,50 +3,70 @@
 @import url('https://fonts.googleapis.com/css2?family=Handlee&display=swap');
 
 :root {
-    --cor-fundo-claro: #F8F0E5;
-    --cor-fundo-escuro: #DAC0A3;
-    --cor-efeito: #EADBC8;
-    --cor-borracha: #EFEAE4;
-    --cor-destaque: #101720;
-    --cor-principal: #00325D;
-    --cor-texto: #5A6D92;
-    --cor-errado: #ED6A5E;
+    --cor-fundo: #BDA67D;
+    --cor-fundo-sombra: #000000;
+    --cor-fundo-claro: #F2EDE4;
+    --cor-fundo-escuro: #8C7241;
+    --cor-efeito: #BDA67D;
+    --cor-texto: #101720;
+    --cor-errado: #c53f32;
+    --cor-borracha: #f7f1e8;
     --fonte: "DM Serif Display", serif;
     --numero: "Handlee";
 }
 
 body {
-    color: var(--cor-principal);
-    background-color: var(--cor-fundo-claro);
+    color: var(--cor-texto);
+    background-color: var(--cor-fundo);
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     height: 100vh;
     font-family: var(--fonte);
     font-size: 16px;
     font-weight: 500;
 }
 
-.cabecalho {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .conteudo {
+    background-color: var(--cor-fundo-claro);
+    box-shadow: 1px 1px 8px var(--cor-fundo-sombra);
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     text-align: center;
+    margin: 1em 0;
+    max-width: 1000px;
+    height: 100vh;
+    padding: 0 2em;
 }
 
 .conteudo__box__titulo {
-    font-size: 48px;
+    color: var(--cor-fundo-escuro);
+    margin-top: 0.3em;
+    font-size: 42px;
+
 }
 
 .conteudo__box__subtitulo {
-    font-size: 18px;
     color: var(--cor-texto);
-    text-align: start;
+    text-align:center;
+    font-size: 18px;
+    margin-top: 0.5em;
+}
+
+.conteudo__borda__topo {
+    background-color: var(--cor-fundo-escuro);
+    margin-top: 1em;
+    width: 600px;
+    height: 15px;
+}
+
+.conteudo__borda__baixo {
+    background-color: var(--cor-fundo-escuro);
+    margin-top: 15em;
+    width: 600px;
+    height: 15px;
 }
 
 .conteudo__valor {
@@ -71,11 +91,11 @@ body {
 }
 
 .conteudo__valor__aleatorio {
-    background-color: var(--cor-fundo-escuro);
+    background-color: var(--cor-efeito);
     border-radius: 0.8em;
     padding: 0.2em 0.5em;
     font-family: var(--numero);
-    font-size: 72px;
+    font-size: 62px;
 }
 
 .conteudo__valor__aleatorio-inativo {
@@ -88,38 +108,35 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 0.3em;
-    background-color: var(--cor-principal);
-    color: var(--cor-texto);
+    background-color: var(--cor-texto);
+    color: var(--cor-fundo-escuro);
     padding: 0.2em 0.5em;
     font-size: 18px;
     border-radius: 0.5em;
 }
 
 .conteudo__valor__pontos__valor {
-    color: var(--cor-fundo-claro);
+    color: var(--cor-efeito);
     font-size: 52px;
 }
 
 .conteudo__lista {
     border: solid 0.5em var(--cor-efeito);
     border-radius: 1em;
-    background-color: var(--cor-fundo-claro);
     margin-top: 1.5em;
     padding: 1em;
 }
 
 .conteudo__lista__inativo {
     border: solid 0.5em var(--cor-borracha);
-    border-radius: 1em;
-    padding: 1em;
 }
 
 .conteudo__lista__valores {
-    max-width: 600px;
+    max-width: 500px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    gap: 1em;
+    gap: 0.3em;
     font-size: 24px;
 }
 
@@ -135,11 +152,11 @@ body {
 
 .conteudo__lista__valores__botao:hover {
     background-color: var(--cor-fundo-escuro);
-    color: var(--cor-principal);
+    color: var(--cor-texto);
 }
 
 .conteudo__lista__valores__botao:active {
-    background-color: var(--cor-principal);
+    background-color: var(--cor-texto);
     color: var(--cor-fundo-escuro);
 }
 
@@ -169,4 +186,13 @@ body {
     color: var(--cor-errado);
     border: solid 0.3em var(--cor-errado);
     padding: 0.2em;
+}
+
+.conteudo__final {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5em;
+    margin-top: 0.5em;
+    width: 500px;
 }

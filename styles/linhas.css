@@ -1,5 +1,5 @@
 .conteudo__linha__fundo {
-    width: 600px;
+    width: 550px;
     height: 5px;
     background-color: var(--cor-borracha);
     position: relative;
@@ -41,21 +41,21 @@
 }
 
 .conteudo__linha__ativa-c {
-    background-color: var(--cor-principal);
+    background-color: var(--cor-texto);
     animation: linhaAumentando-a 3s linear forwards;
 }
 
 .conteudo__linha__ativa-d {
-    background-color: var(--cor-principal);
+    background-color: var(--cor-texto);
     animation: linhaAumentando-b 3s linear forwards;
 }
   
 .conteudo__linha__ativa-e {
-    background-color: var(--cor-destaque);
+    background-color: var(--cor-texto);
     animation: linhaAumentando-a 1.5s linear forwards;
 }
 
 .conteudo__linha__ativa-f {
-    background-color: var(--cor-destaque);
+    background-color: var(--cor-texto);
     animation: linhaAumentando-b 1.5s linear forwards;
 }
