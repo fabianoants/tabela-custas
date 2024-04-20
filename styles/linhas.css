@@ -59,3 +59,10 @@
     background-color: var(--cor-texto);
     animation: linhaAumentando-b 1.5s linear forwards;
 }
+
+@media screen and (max-width: 480px) {
+    .conteudo__linha__fundo {
+        width: 325px;
+        height: 2px;
+    }
+}

@@ -4,7 +4,7 @@
 
 :root {
 
-    --cor-fundo-sombra: #000000;
+    --cor-fundo-sombra: #0000009a;
     --cor-fundo-claro: #F2EDE4;
     --cor-fundo-escuro: #8C7241;
     --cor-efeito: #BDA67D;
@@ -179,9 +179,66 @@ body {
 
 .conteudo__final {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     gap: 5em;
     margin: 1em 0;
     width: 500px;
+}
+
+
+
+@media screen and (max-width: 480px)  {
+    .conteudo {
+        max-width: 350px;
+    }
+
+    .conteudo__valor__aleatorio {
+        border-radius: 0.8em;
+        padding: 0.2em 0.5em;
+        font-family: var(--numero);
+        font-size: 42px;
+    }
+
+    .conteudo__borda {
+        margin-top: 1em;
+        width: 350px;
+        height: 7px;
+    }
+
+    .conteudo__valor {
+        margin: 0.5em 0 1em 0;
+    }
+
+    .conteudo__valor__reiniciar {
+        order: -1;
+    }
+
+    .conteudo__valor__pontos {
+        order: -1;
+        font-size: 12px;
+    }
+
+    .conteudo__valor__pontos__valor {
+        font-size: 36px;
+    }
+    
+    .conteudo__tentativas {
+        gap: 0.5em;
+        font-size: 17px;
+    }
+
+    .conteudo__final {
+        margin: 1em 0;
+        width: 300px;
+        font-size: 12px;
+    }
+
+    .conteudo__final__barras,
+    .conteudo__final__barras img {
+        max-width: 300px;
+        max-height: 25px;
+        width: auto;
+        height: auto;
+    }
 }
