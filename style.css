@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Handlee&display=swap');
 
 :root {
-    --cor-fundo: #BDA67D;
+
     --cor-fundo-sombra: #000000;
     --cor-fundo-claro: #F2EDE4;
     --cor-fundo-escuro: #8C7241;
@@ -16,16 +16,14 @@
 }
 
 body {
+    background-color: var(--cor-efeito);
     color: var(--cor-texto);
-    background-color: var(--cor-fundo);
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     align-items: center;
     height: 100vh;
     font-family: var(--fonte);
-    font-size: 16px;
-    font-weight: 500;
 }
 
 .conteudo {
@@ -34,10 +32,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
-    margin: 1em 0;
+    margin: 0.2em 0;
     max-width: 1000px;
-    height: 100vh;
     padding: 0 2em;
 }
 
@@ -55,16 +51,9 @@ body {
     margin-top: 0.5em;
 }
 
-.conteudo__borda__topo {
+.conteudo__borda {
     background-color: var(--cor-fundo-escuro);
     margin-top: 1em;
-    width: 600px;
-    height: 15px;
-}
-
-.conteudo__borda__baixo {
-    background-color: var(--cor-fundo-escuro);
-    margin-top: 15em;
     width: 600px;
     height: 15px;
 }
@@ -193,6 +182,6 @@ body {
     justify-content: space-between;
     align-items: center;
     gap: 5em;
-    margin-top: 0.5em;
+    margin: 1em 0;
     width: 500px;
 }
