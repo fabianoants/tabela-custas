@@ -187,15 +187,15 @@ body {
     color: var(--cor-errado);
     border: solid 0.3em var(--cor-errado);
     padding: 0.2em;
-    transition: 0.5s;
-    animation: errado 0.5s;
+    transition: 1s;
+    animation: errado 0.3s;
 }
 
 @keyframes errado {
     0% {margin-bottom: 0;}
-    25% {margin-bottom: 5px; scale: 1.3;}
-    50% {margin-bottom: 0;}
-    75% {margin-bottom: -5px; scale: 0.8;}
+    25% {margin-bottom: 2px;}
+    50% {margin-bottom: 0; scale: 0.8;}
+    75% {margin-bottom: -2px;}
     100% {margin-bottom: 0;}
   }
 
