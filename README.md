@@ -13,9 +13,8 @@ Atualizações
 * 20/04 Layout responsivo;
 
 Em desenvolvimento
-
+* Animações.
 
 Futuramente
 * Login com nome;
 * Rank de pontuação;
-* Animações.
