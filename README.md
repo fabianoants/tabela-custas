@@ -11,10 +11,11 @@ Atualizações
 * 18/04 Barra de cronometro para acertar;
 * 18/04 Niveis;
 * 20/04 Layout responsivo;
+* 21/04 Animações;
 
 Em desenvolvimento
-* Animações.
+* Melhor pontuação;
 
 Futuramente
 * Login com nome;
-* Rank de pontuação;
+* Rank com nome;

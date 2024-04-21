@@ -1,10 +1,18 @@
 /////////////////////////////////////////////
 // Pontuação ////////////////////////////////
 let valorAcertos = 0;
+let valorMaximo = 0;
+let maiorValor = document.querySelector('.conteudo__final__sequencia__numero');
 let valorResultado = document.querySelector('.conteudo__valor__pontos__valor');
 function pontuacao(){
     valorAcertos++;
     valorResultado.innerHTML = `${valorAcertos}`;
+}
+function maxValorResultado() {
+    if (valorAcertos > valorMaximo) {
+        valorMaximo = valorAcertos;
+        maiorValor.innerHTML = `${valorMaximo}`;
+    }
 }
 /////////////////////////////////////////////
 // Tentativas ///////////////////////////////
@@ -37,6 +45,7 @@ function cancelarBotoes() {
     }
     botaoReiniciar.classList.add('conteudo__valor__reiniciar-ativado');
     bordaValores.classList.add('conteudo__lista__inativo');
+    maxValorResultado();
     pauseTempo();
     removerLinha();
     nivel = "Auxiliar";
@@ -56,6 +65,7 @@ function reiniciarValor() {
     valor.classList.remove('conteudo__valor__aleatorio-inativo');
     botaoReiniciar.classList.remove('conteudo__valor__reiniciar-ativado');
     botaoPlay.setAttribute('src', 'img/reset.png');
+    maxValorResultado();
     reiniciarSequencia();
     valorBase = gerarValorCustas();
     reiniciarCarimbos();
