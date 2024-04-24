@@ -1,8 +1,9 @@
 /////////////////////////////////////////////
 // Pontuação ////////////////////////////////
 let valorAcertos = 0;
-let valorMaximo = 0;
+let valorMaximo = localStorage.getItem('maxValor') || 0;
 let maiorValor = document.querySelector('.conteudo__final__sequencia__numero');
+maiorValor.innerHTML = `${valorMaximo}`;
 let valorResultado = document.querySelector('.conteudo__valor__pontos__valor');
 function pontuacao(){
     valorAcertos++;
@@ -12,6 +13,7 @@ function maxValorResultado() {
     if (valorAcertos > valorMaximo) {
         valorMaximo = valorAcertos;
         maiorValor.innerHTML = `${valorMaximo}`;
+        localStorage.setItem('maxValor', valorMaximo);
     }
 }
 /////////////////////////////////////////////
